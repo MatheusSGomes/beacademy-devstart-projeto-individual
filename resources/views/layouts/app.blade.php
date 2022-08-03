@@ -6,9 +6,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'Classificados') }}</title>
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Fonts -->
@@ -229,7 +229,9 @@
                         <img 
                             class="img-user-sidebar" 
                             @if(Auth::user()->photo)
-                                src="{{ "http://127.0.0.1:8000/storage/" . Auth::user()->photo }}"
+                                src="{{ asset('/storage/'.Auth::user()->photo) }}"
+                                {{-- src="{{ "http://127.0.0.1:8000/storage/" . Auth::user()->photo }}" --}}
+                                
                             @else
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
                             @endif

@@ -64,11 +64,15 @@
     @foreach($products as $product)
       <div class="col">
         <div class="card">
-          <img 
-            src="{{ "http://127.0.0.1:8000/storage/".$product->image }}"
-            class="card-img-top" 
-            alt="{{ $product->name }}"
-          />
+          <div style="height: 250px;">
+            <img 
+              src="{{ "http://127.0.0.1:8000/storage/".$product->image }}"
+              class="card-img-top" 
+              alt="{{ $product->name }}"
+              style="height: 100%; width: 100%; object-fit: cover;"
+            />
+          </div>
+
 
           <div class="card-body">
             <div class="d-flex justify-content-between">
